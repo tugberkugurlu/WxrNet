@@ -9,7 +9,6 @@ namespace WxrNet
     public class Comment
     {
         private const string DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
-        private string _content;
 
         [XmlElement("comment_id")]
         public string Id { get; set; }

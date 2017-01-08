@@ -10,7 +10,6 @@ namespace WxrNet
     public class Post
     {
         private const string DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
-        private string _content;
 
         [XmlElement(ElementName = "thread_identifier", Namespace = "http://www.disqus.com/")]
         public string Id { get; set; }
