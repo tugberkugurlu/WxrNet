@@ -1,6 +1,14 @@
 # WxrNet
 .NET Disqus migrator for custom XML import format based on the WXR (WordPress eXtended RSS) schema. This is useful for sites importing comments to Disqus in an unsupported format.
 
+## Installation
+
+[WxrNet is available on NuGet](https://www.nuget.org/packages/WxrNet) and supports .NET 4.5 and .NET Standard 1.0.
+
+```
+Install-Package WxrNet
+```
+
 ## Example
 
 ```csharp
