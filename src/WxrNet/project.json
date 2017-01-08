@@ -1,6 +1,7 @@
 {
     "version": "1.0.0-*",
     "description": ".NET Disqus migrator for custom XML import format based on the WXR (WordPress eXtended RSS) schema",
+    "projectUrl": "https://github.com/tugberkugurlu/WxrNet",
     "packOptions": {
         "summary": ".NET Disqus migrator for custom XML import format based on the WXR (WordPress eXtended RSS) schema. This is useful for sites importing comments to Disqus in an unsupported format.",
         "licenseUrl": "https://github.com/tugberkugurlu/WxrNet/blob/master/LICENSE",
