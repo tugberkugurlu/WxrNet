@@ -1,0 +1,27 @@
+{
+    "version": "1.0.0-*",
+    "buildOptions": {
+        "debugType": "portable"
+    },
+    "dependencies": {
+    },
+    "frameworks": {
+        "net45": {
+            "frameworkAssemblies": {
+                "System.Xml": "",
+                "System.Xml.Linq": ""
+            }
+        },
+        "netcoreapp1.1": {
+            "dependencies": {
+                "System.Runtime": "4.3.0",
+                "System.Xml.XmlSerializer": "4.3.0",
+                "System.Runtime.Serialization.Formatters": "4.3.0",
+                "System.Collections": "4.3.0",
+                "System.Globalization": "4.3.0",
+                "System.Xml.XmlDocument": "4.3.0"
+            },
+            "imports": "dnxcore50"
+        }
+    }
+}
