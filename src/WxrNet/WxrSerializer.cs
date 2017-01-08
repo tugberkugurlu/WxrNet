@@ -6,7 +6,10 @@ namespace WxrNet
 {
     public static class WxrSerializer
     {
-        public static string Serialize(Wxr site)
+        private static readonly XmlSerializer _serializer;
+        private static readonly XmlSerializerNamespaces _xmlNamespaces;
+
+        static WxrSerializer()
         {
             var serializer = new XmlSerializer(typeof(Wxr));
             var xmlNamespaces = new XmlSerializerNamespaces();
@@ -16,9 +19,17 @@ namespace WxrNet
             xmlNamespaces.Add("dsq", "http://www.disqus.com/");
             xmlNamespaces.Add("wp", "http://wordpress.org/export/1.0/");
 
+            _serializer = serializer;
+            _xmlNamespaces = xmlNamespaces;
+        }
+
+        public static string Serialize(Wxr site)
+        {
+            var output = new StringBuilder();
+
             using (var writer = XmlWriter.Create(output, new XmlWriterSettings { Indent = true }))
             {
-                serializer.Serialize(writer, site, xmlNamespaces);
+                _serializer.Serialize(writer, site, _xmlNamespaces);
             }
 
             return output.ToString();
