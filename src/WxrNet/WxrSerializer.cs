@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
@@ -23,11 +24,17 @@ namespace WxrNet
             _xmlNamespaces = xmlNamespaces;
         }
 
-        public static string Serialize(Wxr site)
+        public static string Serialize(Wxr site) => 
+            Serialize(site, new XmlWriterSettings { Indent = true, Encoding = Encoding.UTF8 });
+
+        public static string Serialize(Wxr site, XmlWriterSettings settings)
         {
+            if(site == null) throw new ArgumentNullException(nameof(site));
+            if(settings == null) throw new ArgumentNullException(nameof(settings));
+
             var output = new StringBuilder();
 
-            using (var writer = XmlWriter.Create(output, new XmlWriterSettings { Indent = true }))
+            using (var writer = XmlWriter.Create(output, settings))
             {
                 _serializer.Serialize(writer, site, _xmlNamespaces);
             }
